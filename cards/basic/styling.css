@@ -4,9 +4,7 @@
 
 .card {
     font-family: 'Lato', sans-serif, Arial; /* Sans-serif and Arial are the fallback in case the font 'Lato' cannot be used (requires internet access). */
-    font-size: 1.2rem; /* Change the size of the text, the larger the number the larger the text, the smaller the number the smaller the text. */
-    color: black;
-    background-color: white;
+    font-size: 1rem; /* Change the size of the text, the larger the number the larger the text, the smaller the number the smaller the text. */
     text-align: center;
 }
 
@@ -17,20 +15,20 @@
 /* Reduce the maximum size of the card container, so that it is centred and does not take up the whole screen. */
 .centered-block {
     display: inline-block;
-    max-width: 60vw;
+    max-width: 90vw;
 }
 
-/* Helps prevent code blocks from overflowing */
-code {
+/* Helps prevent code blocks and tables from overflowing */
+code, table {
     display: inline-block;
-    overflow: auto; /* Enable horizontal scrolling if necessary */
+    overflow: auto; /* Enable scrolling if necessary */
     max-width: 100%; /* Limit the maximum width to prevent overflow */
 }
 
 /* This centres the images and adds a little space at the top and bottom to separate them a little. */
 img {
     display: block;
-    margin: 20px auto;
+    margin: 1.2rem auto;
 }
 
 /* Instead of having a double border (internal and external), the tables are changed to a single border (which is the one commonly used in several programmes). */
@@ -39,7 +37,55 @@ table {
 }
 
 /* Changes the spacing and colour of table borders */
-table, th, td {
-    padding: 10px;
+th, td {
+    padding: 0.3rem;
     border: 1px solid;
+}
+
+/* Media queries */
+/* ===== */
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    .centered-block {
+        max-width: 80vw;
+    }
+    .card {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    th, td {
+        padding: 0.4rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .centered-block {
+        max-width: 70vw;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .centered-block {
+        max-width: 60vw;
+    }
+    .card {
+        font-size: 1.2rem;
+    }
+    th, td {
+        padding: 0.6rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media screen and (min-width: 1400px) {
+    /* Empty */
 }
