@@ -2,6 +2,12 @@
 /* Requires internet connection for the 'Lato' font to work, it is used to change how the font of the cards looks like. */
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* Reset CSS */
+/* Box-sizing border-box for all elements */
+* {
+    box-sizing: border-box;
+}
+
 .card {
     font-family: 'Lato', sans-serif, Arial; /* Sans-serif and Arial are the fallback in case the font 'Lato' cannot be used (requires internet access). */
     font-size: 1rem; /* Change the size of the text, the larger the number the larger the text, the smaller the number the smaller the text. */
@@ -15,7 +21,7 @@
 /* Reduce the maximum size of the card container, so that it is centred and does not take up the whole screen. */
 .centered-block {
     display: inline-block;
-    max-width: 90vw;
+    max-width: 88vw;
 }
 
 /* Helps prevent code blocks and tables from overflowing */
@@ -42,30 +48,201 @@ th, td {
     border: 1px solid;
 }
 
+/* Makes blockquote have a more modern look */
+blockquote {
+    padding-left: 15px;
+    border-left: 3px solid #7098f4;
+    margin: 1rem 0;
+}
+
+ol, ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+/* ============================================================= */
+
+/* This is to change the aspect of the code tags <code>. */
+code {
+    color: #FBB829;
+    background-color: #32302f;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    border: 1px #3c3836 solid;
+}
+
+*:not(pre) > code {
+    font-size: 85%;
+    vertical-align: -0.53em;
+}
+
+/* ============================================================= */
+
+/*
+Theme: Srcery
+Description: Srcery dark color scheme for highlight.js
+Author: Chen Bin <chen.bin@gmail.com>
+Maintainer: @redguardtoo
+Website: https://srcery-colors.github.io/
+Date: 2021-04-13
+*/
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0;
+}
+
+code.hljs {
+    padding: 3px 5px;
+}
+
+.hljs {
+  background: #32302f; /* Black */
+  color: #FCE8C3; /* Bright White */
+  border: 4px #3c3836 solid;
+}
+
+/* Bright White */
+.hljs-subst,
+.hljs-quote,
+.hljs-literal {
+  color: #FCE8C3;
+}
+
+/* Bright Blue */
+.hljs-type,
+.hljs-symbol {
+  color: #68A8E4;
+}
+
+/* Red */
+.hljs-keyword,
+.hljs-deletion {
+  color: #EF2F27;
+}
+
+/* Yellow */
+.hljs-name,
+.hljs-function,
+.hljs-attribute,
+.hljs-selector-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-section,
+.hljs-title {
+  color: #FBB829;
+}
+
+/* Cyan */
+.hljs-code,
+.hljs-variable,
+.hljs-property,
+.hljs-template-variable,
+.hljs-number,
+.hljs-class {
+  color: #0AAEB3;
+}
+
+/* Bright Green */
+.hljs-string,
+.hljs-regexp,
+.hljs-bullet,
+.hljs-addition {
+  color: #98BC37;
+}
+
+/* Bright Magenta */
+.hljs-built_in,
+.hljs-params {
+  color: #FF5C8F;
+}
+
+/* Blue */
+.hljs-template-tag,
+.hljs-selector-tag {
+  color: #2C78BF;
+}
+
+/* Bright Black */
+.hljs-link,
+.hljs-comment,
+.hljs-meta {
+  color: #918175;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* @see https://github.com/srcery-colors/srcery-emacs for reference */
+
+/* ============================================================= */
 /* Media queries */
-/* ===== */
+/* To adjust the different classes and adapt them to a smaller screen, e.g. a mobile phone screen. */
+/* ============================================================= */
 
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
     .centered-block {
-        max-width: 80vw;
+        max-width: 540px;
     }
     .card {
         font-size: 1.1rem;
+    }
+    blockquote {
+        margin: 1rem;
+    }
+    ol, ul {
+        padding-left:  1.5rem;
+        margin: 1em 0;
+    }
+    pre code.hljs {
+        padding: 0.5em;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+    .centered-block {
+        max-width: 720px;
+    }
+    .centered-block > *:not(pre,code,table,ol,ul,blockquote) {
+        max-width: 61ch;
+    }
+    .card {
+        font-size: 1.3rem;
+    }
     th, td {
         padding: 0.4rem;
+    }
+    blockquote {
+        margin: 1rem 1.5rem;
+    }
+    ol, ul {
+        padding-left:  2.5rem;
+        margin: 1em 0;
+    }
+    pre code.hljs {
+        padding: 1em;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     .centered-block {
-        max-width: 70vw;
+        max-width: 960px;
+    }
+    .centered-block > *:not(pre,code,table,ol,ul,blockquote) {
+        max-width: 75ch;
+    }
+    .card {
+        font-size: 1.4rem;
     }
     th, td {
         padding: 0.5rem;
@@ -75,10 +252,7 @@ th, td {
 /* X-Large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
     .centered-block {
-        max-width: 60vw;
-    }
-    .card {
-        font-size: 1.2rem;
+        max-width: 1140px;
     }
     th, td {
         padding: 0.6rem;
@@ -87,5 +261,7 @@ th, td {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media screen and (min-width: 1400px) {
-    /* Empty */
+    .centered-block {
+        max-width: 1320px;
+    }
 }
