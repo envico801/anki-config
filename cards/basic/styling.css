@@ -11,17 +11,23 @@
 .card {
     font-family: 'Lato', sans-serif, Arial; /* Sans-serif and Arial are the fallback in case the font 'Lato' cannot be used (requires internet access). */
     font-size: 1rem; /* Change the size of the text, the larger the number the larger the text, the smaller the number the smaller the text. */
-    text-align: center;
+    text-align: left;
 }
 
 .text-align-left {
     text-align: left;
 }
 
+.main-block {
+    width: 100%;
+    margin-top: 4vh;
+}
+
 /* Reduce the maximum size of the card container, so that it is centred and does not take up the whole screen. */
 .centered-block {
-    display: inline-block;
+    display: block;
     max-width: 88vw;
+    margin: auto;
 }
 
 /* Helps prevent code blocks and tables from overflowing */
@@ -90,7 +96,7 @@ Date: 2021-04-13
 pre code.hljs {
     display: block;
     overflow-x: auto;
-    padding: 0;
+    padding: 0.3em;
 }
 
 code.hljs {
@@ -195,6 +201,9 @@ code.hljs {
     .card {
         font-size: 1.1rem;
     }
+    .main-block {
+        margin-top: 5vh;
+    }
     blockquote {
         margin: 1rem;
     }
@@ -212,11 +221,14 @@ code.hljs {
     .centered-block {
         max-width: 720px;
     }
-    .centered-block > *:not(pre,code,table,ol,ul,blockquote) {
+    .centered-block *:not(pre,code,table,ol,ul,blockquote) {
         max-width: 61ch;
     }
     .card {
         font-size: 1.3rem;
+    }
+    .main-block {
+        margin-top: 6vh;
     }
     th, td {
         padding: 0.4rem;
@@ -238,11 +250,14 @@ code.hljs {
     .centered-block {
         max-width: 960px;
     }
-    .centered-block > *:not(pre,code,table,ol,ul,blockquote) {
+    .centered-block *:not(pre,code,table,ol,ul,blockquote) {
         max-width: 75ch;
     }
     .card {
         font-size: 1.4rem;
+    }
+    .main-block {
+        margin-top: 7vh;
     }
     th, td {
         padding: 0.5rem;
@@ -251,8 +266,11 @@ code.hljs {
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
-    .centered-block {
-        max-width: 1140px;
+    /*.centered-block {*/
+    /*    max-width: 1140px;*/
+    /*}*/
+    .main-block {
+        margin-top: 8vh;
     }
     th, td {
         padding: 0.6rem;
@@ -261,7 +279,7 @@ code.hljs {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media screen and (min-width: 1400px) {
-    .centered-block {
-        max-width: 1320px;
-    }
+    /*.centered-block {*/
+    /*    max-width: 1320px;*/
+    /*}*/
 }
