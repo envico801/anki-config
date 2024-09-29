@@ -1,5 +1,9 @@
-/* Requires internet connection for the 'Lato' font */
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf');
+  font-weight: normal;
+}
 
 /* Color Variables */
 :root {
@@ -23,7 +27,8 @@
 
 /* Base Card Styling */
 .card {
-  font-family: 'Lato', sans-serif, Arial;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   text-align: left;
 }
@@ -90,6 +95,8 @@ code {
   padding: 0.2em 0.4em;
   border-radius: 6px;
   border: 1px solid var(--color-border);
+  font-family: 'JetBrainsMono', monospace;
+  font-weight: 400;
 }
 
 *:not(pre) > code,
