@@ -92,7 +92,8 @@ code {
   border: 1px solid var(--color-border);
 }
 
-*:not(pre) > code {
+*:not(pre) > code,
+*:not(pre) > code.hljs {
   font-size: 85%;
   vertical-align: -0.53em;
 }
@@ -108,78 +109,157 @@ code.hljs {
   padding: 3px 5px;
 }
 
-.hljs {
+.hljs,
+code.hljs {
   background: var(--color-black);
   color: var(--color-white);
   border: 4px solid var(--color-border);
 }
 
 /* Highlight.js Syntax Colors */
+
+/* White */
 .hljs-subst,
+code .hljs-subst,
 .hljs-quote,
-.hljs-literal {
+code .hljs-quote,
+.hljs-literal,
+code .hljs-literal,
+.hljs-punctuation,
+code .hljs-punctuation,
+.hljs-tag,
+code .hljs-tag {
   color: var(--color-white);
 }
 
+/* Blue */
 .hljs-type,
-.hljs-symbol {
+code .hljs-type,
+.hljs-symbol,
+code .hljs-symbol,
+.hljs-name,
+code .hljs-name,
+.hljs-template-tag,
+code .hljs-template-tag,
+.hljs-selector-tag,
+code .hljs-selector-tag {
   color: var(--color-blue);
 }
 
+/* Red */
 .hljs-keyword,
-.hljs-deletion {
+code .hljs-keyword,
+.hljs-deletion,
+code .hljs-deletion,
+.hljs-operator,
+code .hljs-operator {
   color: var(--color-red);
 }
 
-.hljs-name,
+/* Yellow */
 .hljs-function,
+code .hljs-function,
 .hljs-attribute,
+code .hljs-attribute,
 .hljs-selector-attr,
+code .hljs-selector-attr,
 .hljs-selector-id,
+code .hljs-selector-id,
 .hljs-selector-class,
+code .hljs-selector-class,
 .hljs-selector-pseudo,
+code .hljs-selector-pseudo,
 .hljs-section,
-.hljs-title {
+code .hljs-section,
+.hljs-title,
+code .hljs-title,
+.hljs-title.function_,
+code .hljs-title.function_,
+.hljs-title.function_.invoke__,
+code .hljs-title.function_.invoke__ {
   color: var(--color-yellow);
 }
 
+/* Cyan */
 .hljs-code,
+code .hljs-code,
 .hljs-variable,
+code .hljs-variable,
 .hljs-property,
+code .hljs-property,
 .hljs-template-variable,
+code .hljs-template-variable,
 .hljs-number,
-.hljs-class {
+code .hljs-number,
+.hljs-class,
+code .hljs-class,
+.hljs-variable.constant_,
+code .hljs-variable.constant_ {
   color: var(--color-cyan);
 }
 
+/* Green */
 .hljs-string,
+code .hljs-string,
 .hljs-regexp,
+code .hljs-regexp,
 .hljs-bullet,
-.hljs-addition {
+code .hljs-bullet,
+.hljs-addition,
+code .hljs-addition {
   color: var(--color-green);
 }
 
+/* Magenta */
 .hljs-built_in,
-.hljs-params {
+code .hljs-built_in,
+.hljs-params,
+code .hljs-params,
+.hljs-char.escape_,
+code .hljs-char.escape_,
+.hljs-doctag,
+code .hljs-doctag,
+.hljs-attr,
+code .hljs-attr,
+.hljs-formula,
+code .hljs-formula {
   color: var(--color-magenta);
 }
 
-.hljs-template-tag,
-.hljs-selector-tag {
-  color: var(--color-blue);
-}
-
+/* Dark Grey */
 .hljs-link,
+code .hljs-link,
 .hljs-comment,
-.hljs-meta {
+code .hljs-comment,
+.hljs-meta,
+code .hljs-meta,
+.hljs-meta.prompt_,
+code .hljs-meta.prompt_,
+.hljs-meta .hljs-keyword,
+code .hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string,
+code .hljs-meta .hljs-string {
   color: var(--color-dark-grey);
 }
 
-.hljs-emphasis {
+/* Blockquote Border Color */
+.hljs-variable.language_,
+code .hljs-variable.language_,
+.hljs-title.class_,
+code .hljs-title.class_,
+.hljs-title.class_.inherited__,
+code .hljs-title.class_.inherited__ {
+  color: var(--color-blockquote-border);
+}
+
+/* Non-color styles */
+.hljs-emphasis,
+code .hljs-emphasis {
   font-style: italic;
 }
 
-.hljs-strong {
+.hljs-strong,
+code .hljs-strong {
   font-weight: bold;
 }
 
@@ -235,7 +315,8 @@ code.hljs {
     padding-left: 2.5rem;
     margin: 1em 0;
   }
-  pre code.hljs {
+  pre code.hljs,
+  code pre code.hljs {
     padding: 1em;
   }
 }
