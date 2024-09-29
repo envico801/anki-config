@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 @font-face {
   font-family: 'JetBrainsMono';
   src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf');
@@ -17,7 +17,32 @@
   --color-green: #98bc37;
   --color-magenta: #ff5c8f;
   --color-dark-grey: #918175;
-  --color-blockquote-border: #7098f4;
+  --color-bright-blue: #7098f4;
+  --post-blockquote-bg: #08211e;
+  --post-blockquote-txt: #e0fffb;
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-16: 1.6rem;
+  --font-20: 2rem;
+  --font-24: 2.4rem;
+  --font-32: 3.2rem;
+  --font-48: 4.8rem;
+  --font-96: 9.6rem;
+  --spacing-4: 0.4rem;
+  --spacing-8: 0.8rem;
+  --spacing-16: 1.6rem;
+  --spacing-24: 2.4rem;
+  --spacing-32: 3.2rem;
+  --spacing-64: 6.4rem;
+  --spacing-128: 12.8rem;
+  --post-txt-size: 18px;
+  --post-txt-length: 90ch;
+  --post-txt-height: 40px;
+  --shadow-sm: 0px 0px 4px 4px #0000000a;
+  --shadow-md: 0px 0px 10px 4px #0000001a;
+  --shadow-lg: 0px 0px 20px 8px #00000033;
+  --rounded-4: 4px;
+  --rounded-20: 20px;
 }
 
 /* Reset and Box-sizing */
@@ -27,10 +52,12 @@
 
 /* Base Card Styling */
 .card {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: var(--post-txt-size);
   text-align: left;
+  margin-bottom: var(--spacing-32);
+  line-height: var(--post-txt-height);
 }
 
 .text-align-left {
@@ -49,18 +76,74 @@
   margin: auto;
 }
 
-/* Prevents overflow for code blocks and tables */
-code,
-table {
-  display: inline-block;
-  overflow: auto;
-  max-width: 100%;
+em {
+  font-style: italic;
+  color: var(--color-dark-grey);
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-bright-blue);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  margin-top: var(--spacing-64);
+  margin-bottom: var(--spacing-24);
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  text-transform: capitalize;
+  font-size: clamp(var(--font-24), 4vw, var(--font-32));
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+  line-height: 32px;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
 }
 
 /* Image Styling */
 img {
   display: block;
-  margin: 1.2rem auto;
+  margin: var(--spacing-16) auto;
 }
 
 /* Table Styling */
@@ -70,50 +153,69 @@ table {
 
 th,
 td {
-  padding: 0.3rem;
+  padding: var(--spacing-4);
   border: 1px solid var(--color-border);
 }
 
 /* Blockquote Styling */
 blockquote {
-  padding-left: 15px;
-  border-left: 3px solid var(--color-blockquote-border);
-  margin: 1rem 0;
+  font-family: var(--font-sans);
+  padding: var(--spacing-32);
+  margin: var(--spacing-32) 0;
+  text-align: start;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--rounded-20);
+  background-color: var(--post-blockquote-bg);
+  border: 1px solid var(--color-cyan);
+  border-top: 4px solid var(--color-cyan);
+  color: var(--post-blockquote-txt);
 }
 
 /* Lists */
-ol,
-ul {
-  padding-left: 1rem;
-  margin: 0;
+ul ol {
+  display: grid;
+  row-gap: var(--spacing-16);
+  list-style-position: inside;
+  padding-left: var(--spacing-16);
 }
 
-/* Code Tag Styling */
+/* Prevents overflow for code blocks and tables */
+code,
+table {
+  display: inline-block;
+  overflow: auto;
+  max-width: 100%;
+  line-height: normal;
+  border-radius: var(--spacing-4);
+}
+
 code {
-  color: var(--color-yellow);
-  background-color: var(--color-black);
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  border: 1px solid var(--color-border);
-  font-family: 'JetBrainsMono', monospace;
+  font-family: var(--font-mono);
   font-weight: 400;
 }
 
+/* Code Tag Styling */
 *:not(pre) > code,
 *:not(pre) > code.hljs {
-  font-size: 85%;
-  vertical-align: -0.53em;
+  display: inline;
+  line-height: inherit;
+  color: var(--color-yellow);
+  background-color: var(--color-black);
+  font-size: var(--post-txt-size);
+  padding: var(--spacing-4) var(--spacing-8);
+  border: 1px solid var(--color-border);
 }
 
 /* Highlight.js Theme (Srcery) */
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.3em;
+  padding: var(--spacing-4);
+  color: var(--color-white);
 }
 
 code.hljs {
-  padding: 3px 5px;
+  padding: var(--spacing-4) var(--spacing-8);
 }
 
 .hljs,
@@ -256,7 +358,7 @@ code .hljs-variable.language_,
 code .hljs-title.class_,
 .hljs-title.class_.inherited__,
 code .hljs-title.class_.inherited__ {
-  color: var(--color-blockquote-border);
+  color: var(--color-bright-blue);
 }
 
 /* Non-color styles */
@@ -312,7 +414,7 @@ code .hljs-strong {
   }
   th,
   td {
-    padding: 0.4rem;
+    padding: var(--spacing-4);
   }
   blockquote {
     margin: 1rem 1.5rem;
@@ -322,8 +424,7 @@ code .hljs-strong {
     padding-left: 2.5rem;
     margin: 1em 0;
   }
-  pre code.hljs,
-  code pre code.hljs {
+  pre code.hljs {
     padding: 1em;
   }
 }
