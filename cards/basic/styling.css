@@ -1,32 +1,43 @@
+/* Importing external fonts: Poppins for sans-serif and JetBrains Mono for monospace */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Defining a custom font for JetBrains Mono */
 @font-face {
   font-family: 'JetBrainsMono';
   src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf');
   font-weight: normal;
 }
 
-/* Color Variables */
+/* Global color, font, spacing, and style variables */
 :root {
-  /* Color palette */
-  --color-primary-dark: #32302f;
-  --color-primary-light: #fce8c3;
+  /* Primary color scheme */
+  --color-primary-dark: #32302f; /* Dark background */
+  --color-primary-light: #fce8c3; /* Light text */
+
+  /* Border color */
   --color-border: #3c3836;
+
+  /* Accent colors for emphasis and highlights */
   --color-accent-blue: #68a8e4;
   --color-accent-red: #ef2f27;
   --color-accent-yellow: #fbb829;
   --color-accent-cyan: #0aaeb3;
   --color-accent-green: #98bc37;
   --color-accent-magenta: #ff5c8f;
-  --color-neutral-grey: #918175;
-  --color-highlight-blue: #7098f4;
+
+  /* Neutral colors */
+  --color-neutral-grey: #918175; /* Grey text */
+  --color-highlight-blue: #7098f4; /* Link hover color */
 
   /* Blockquote styles */
-  --blockquote-bg: #08211e;
-  --blockquote-text: #e0fffb;
+  --blockquote-bg: #08211e; /* Blockquote background */
+  --blockquote-text: #e0fffb; /* Blockquote text color */
 
-  /* Typography */
-  --font-family-sans: 'Poppins', sans-serif;
-  --font-family-mono: 'JetBrains Mono', monospace;
+  /* Typography settings */
+  --font-family-sans: 'Poppins', sans-serif; /* Default sans-serif font */
+  --font-family-mono: 'JetBrains Mono', monospace; /* Monospace font for code */
+
+  /* Font sizes */
   --font-16: 1.6rem;
   --font-20: 2rem;
   --font-24: 2.4rem;
@@ -34,7 +45,7 @@
   --font-48: 4.8rem;
   --font-96: 9.6rem;
 
-  /* Spacing */
+  /* Spacing variables for padding/margins */
   --spacing-4: 0.4rem;
   --spacing-8: 0.8rem;
   --spacing-16: 1.6rem;
@@ -43,68 +54,71 @@
   --spacing-64: 6.4rem;
   --spacing-128: 12.8rem;
 
-  /* Post styles */
-  --post-text-size: 1.125rem;
-  --post-text-max-width: 90ch;
-  --post-line-height: 2.5rem;
+  /* Post styling for article text */
+  --post-text-size: 1.125rem; /* Base font size */
+  --post-text-max-width: 90ch; /* Max width for readable text lines */
+  --post-line-height: 2.5rem; /* Line height for better readability */
 
-  /* Shadows */
-  --shadow-sm: 0px 0px 4px 4px #0000000a;
-  --shadow-md: 0px 0px 10px 4px #0000001a;
-  --shadow-lg: 0px 0px 20px 8px #00000033;
+  /* Shadow styles */
+  --shadow-sm: 0px 0px 4px 4px #0000000a; /* Small shadow */
+  --shadow-md: 0px 0px 10px 4px #0000001a; /* Medium shadow */
+  --shadow-lg: 0px 0px 20px 8px #00000033; /* Large shadow */
 
-  /* Border radius */
+  /* Border radius for rounded corners */
   --rounded-4: 4px;
   --rounded-20: 20px;
 }
 
-/* Reset and Box-sizing */
+/* Universal styles */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure consistent box-sizing model */
 }
 
-/* Base Card Styling */
+/* Card component styling */
 .card {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-sans); /* Using Poppins font */
   font-weight: 400;
   font-size: 1rem;
   text-align: left;
-  margin-bottom: var(--spacing-32);
-  line-height: var(--post-line-height);
+  margin-bottom: var(--spacing-32); /* Adds margin at the bottom */
+  line-height: var(--post-line-height); /* Improves text readability */
 }
 
 .text-align-left {
   text-align: left;
 }
 
-/* Main Block Layout */
+/* Layout styles */
 .main-block {
-  width: 100%;
-  margin-top: 4vh;
+  width: 100%; /* Full width for main content block */
+  margin-top: 4vh; /* Adds vertical spacing */
 }
 
 .centered-block {
   display: block;
-  max-width: 88vw;
-  margin: auto;
+  max-width: 88vw; /* Limits width on larger screens */
+  margin: auto; /* Centers the block horizontally */
 }
 
+/* Emphasis styles */
 em {
   font-style: italic;
-  color: var(--color-neutral-grey);
+  color: var(--color-neutral-grey); /* Grey text for emphasis */
 }
 
+/* Link styles */
 a {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-blue); /* Default link color */
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 700; /* Bold links */
 }
 
 a:hover {
-  text-decoration: underline;
-  color: var(--color-highlight-blue);
+  text-decoration: underline; /* Underlines link on hover */
+  color: var(--color-highlight-blue); /* Highlighted color on hover */
 }
 
+/* Text styling to prevent content overflow */
 p,
 h1,
 h2,
@@ -112,26 +126,27 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: break-word; /* Prevents text from overflowing */
 }
 
+/* Header styles */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
-  margin-top: var(--spacing-24);
-  margin-bottom: var(--spacing-24);
-  font-weight: 700;
+  font-family: var(--font-family-sans); /* Uses Poppins for headers */
+  margin-top: var(--spacing-24); /* Adds spacing before headers */
+  margin-bottom: var(--spacing-24); /* Adds spacing after headers */
+  font-weight: 700; /* Makes headers bold */
 }
 
-h1,
-h2 {
-  text-transform: capitalize;
+h1, h2 {
+  text-transform: capitalize; /* Capitalizes first letter in headers */
 }
 
+/* Specific font sizes for each header level */
 h1 {
   font-size: 2rem;
 }
@@ -145,88 +160,89 @@ h3 {
 h4 {
   font-size: 1.2rem;
 }
-h5,
-h6 {
+h5, h6 {
   font-size: 1rem;
 }
 h6 {
-  color: var(--color-neutral-grey);
+  color: var(--color-neutral-grey); /* Grey text for h6 */
 }
 
-/* Image Styling */
+/* Image styling */
 img {
   display: block;
-  margin: var(--spacing-16) auto;
+  margin: var(--spacing-16) auto; /* Centers images */
 }
 
-/* Table Styling */
+/* Table styling */
 table {
-  border-collapse: collapse;
+  border-collapse: collapse; /* Removes gaps between table borders */
 }
 
 th,
 td {
-  padding: var(--spacing-4);
-  border: 1px solid var(--color-border);
+  padding: var(--spacing-4); /* Adds padding to table cells */
+  border: 1px solid var(--color-border); /* Adds a border to cells */
 }
 
-/* Blockquote Styling */
+/* Blockquote styling */
 blockquote {
-  font-family: var(--font-family-sans);
-  padding: 1.2rem;
-  margin: var(--spacing-32) 0;
-  text-align: start;
-  box-shadow: var(--shadow-sm);
-  border-radius: var(--rounded-20);
-  background-color: var(--blockquote-bg);
-  border: 1px solid var(--color-accent-cyan);
-  border-top: 4px solid var(--color-accent-cyan);
-  color: var(--blockquote-text);
+  font-family: var(--font-family-sans); /* Uses Poppins for blockquotes */
+  padding: 1.2rem; /* Adds padding inside the blockquote */
+  margin: var(--spacing-32) 0; /* Adds vertical margin */
+  text-align: start; /* Aligns blockquote text to the start */
+  box-shadow: var(--shadow-sm); /* Adds a subtle shadow */
+  border-radius: var(--rounded-20); /* Rounds blockquote corners */
+  background-color: var(--blockquote-bg); /* Background color */
+  border: 1px solid var(--color-accent-cyan); /* Border color */
+  border-top: 4px solid var(--color-accent-cyan); /* Top border accent */
+  color: var(--blockquote-text); /* Text color inside blockquotes */
 }
 
-/* Lists */
+/* List styling */
 ul ol {
   display: grid;
-  row-gap: var(--spacing-16);
-  list-style-position: inside;
-  padding-left: var(--spacing-16);
+  row-gap: var(--spacing-16); /* Adds spacing between list items */
+  list-style-position: inside; /* Aligns bullets/numbers inside */
+  padding-left: var(--spacing-16); /* Adds left padding */
 }
 
-/* Prevents overflow for code blocks and tables */
+/* Prevent overflow for code blocks and tables */
 code,
 table {
   display: inline-block;
-  overflow: auto;
-  max-width: 100%;
+  overflow: auto; /* Adds scrollbar for large code blocks/tables */
+  max-width: 100%; /* Prevents code and table overflow */
   line-height: normal;
-  border-radius: var(--spacing-4);
+  border-radius: var(--spacing-4); /* Rounds corners */
 }
 
+/* Code block styles */
 code {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono); /* Uses JetBrains Mono for code */
   font-weight: 400;
 }
 
-/* Code Tag Styling */
+/* Inline code styles */
 *:not(pre) > code,
 *:not(pre) > code.hljs {
   display: inline;
   line-height: inherit;
-  color: var(--color-accent-yellow);
-  background-color: var(--color-primary-dark);
-  font-size: 0.9rem;
-  padding: 0.2rem var(--spacing-4);
-  border: 1px solid var(--color-border);
+  color: var(--color-accent-yellow); /* Yellow text for inline code */
+  background-color: var(--color-primary-dark); /* Dark background */
+  font-size: 0.9rem; /* Slightly smaller font */
+  padding: 0.2rem var(--spacing-4); /* Adds padding */
+  border: 1px solid var(--color-border); /* Adds border */
 }
 
-/* Highlight.js Theme (Srcery) */
+/* Preformatted code block styles for highlight.js */
 pre code.hljs {
   display: block;
-  overflow-x: auto;
+  overflow-x: auto; /* Horizontal scrolling */
   padding: var(--spacing-4);
-  color: var(--color-primary-light);
+  color: var(--color-primary-light); /* Light text color */
 }
 
+/* Highlight.js code block styling */
 code.hljs {
   padding: var(--spacing-4) var(--spacing-8);
 }
@@ -238,9 +254,9 @@ code.hljs {
   border: 4px solid var(--color-border);
 }
 
-/* Highlight.js Syntax Colors */
+/* Syntax highlighting for Highlight.js */
 
-/* White */
+/* White text for substitutions, quotes, literals, punctuation, and tags */
 .hljs-subst,
 code .hljs-subst,
 .hljs-quote,
@@ -254,7 +270,7 @@ code .hljs-tag {
   color: var(--color-primary-light);
 }
 
-/* Blue */
+/* Blue text for types, symbols, names, template tags, and selector tags */
 .hljs-type,
 code .hljs-type,
 .hljs-symbol,
@@ -268,7 +284,7 @@ code .hljs-selector-tag {
   color: var(--color-accent-blue);
 }
 
-/* Red */
+/* Red text for keywords, deletions, and operators */
 .hljs-keyword,
 code .hljs-keyword,
 .hljs-deletion,
@@ -278,7 +294,7 @@ code .hljs-operator {
   color: var(--color-accent-red);
 }
 
-/* Yellow */
+/* Yellow text for functions, attributes, selectors (attribute, ID, class, pseudo), sections, and titles */
 .hljs-function,
 code .hljs-function,
 .hljs-attribute,
@@ -302,7 +318,7 @@ code .hljs-title.function_.invoke__ {
   color: var(--color-accent-yellow);
 }
 
-/* Cyan */
+/* Cyan text for code blocks, variables, properties, template variables, numbers, and class names */
 .hljs-code,
 code .hljs-code,
 .hljs-variable,
@@ -320,7 +336,7 @@ code .hljs-variable.constant_ {
   color: var(--color-accent-cyan);
 }
 
-/* Green */
+/* Green text for strings, regular expressions, bullets, and additions */
 .hljs-string,
 code .hljs-string,
 .hljs-regexp,
@@ -332,7 +348,7 @@ code .hljs-addition {
   color: var(--color-accent-green);
 }
 
-/* Magenta */
+/* Magenta text for built-in objects, parameters, escape characters, doctags, attributes, and formulas */
 .hljs-built_in,
 code .hljs-built_in,
 .hljs-params,
@@ -348,7 +364,7 @@ code .hljs-formula {
   color: var(--color-accent-magenta);
 }
 
-/* Dark Grey */
+/* Dark grey text for links, comments, and metadata */
 .hljs-link,
 code .hljs-link,
 .hljs-comment,
@@ -364,7 +380,7 @@ code .hljs-meta .hljs-string {
   color: var(--color-neutral-grey);
 }
 
-/* Blockquote Border Color */
+/* Blockquote border color using a blue highlight for language variables and class titles */
 .hljs-variable.language_,
 code .hljs-variable.language_,
 .hljs-title.class_,
@@ -374,12 +390,13 @@ code .hljs-title.class_.inherited__ {
   color: var(--color-highlight-blue);
 }
 
-/* Non-color styles */
+/* Italic style for emphasis */
 .hljs-emphasis,
 code .hljs-emphasis {
   font-style: italic;
 }
 
+/* Bold style for strong text */
 .hljs-strong,
 code .hljs-strong {
   font-weight: bold;
@@ -390,25 +407,25 @@ code .hljs-strong {
 /* Small devices (576px and up) */
 @media screen and (min-width: 576px) {
   .centered-block {
-    max-width: 540px;
+    max-width: 540px; /* Maximum width for centered blocks */
   }
   .card {
-    font-size: var(--post-text-size);
+    font-size: var(--post-text-size); /* Font size for cards */
   }
   .main-block {
-    margin-top: 5vh;
+    margin-top: 5vh; /* Top margin for main block */
   }
   blockquote {
-    padding: var(--spacing-24);
-    margin: 1rem;
+    padding: var(--spacing-24); /* Padding for blockquotes */
+    margin: 1rem; /* Margin for blockquotes */
   }
   ol,
   ul {
-    padding-left: 1.5rem;
-    margin: 1em 0;
+    padding-left: 1.5rem; /* Padding for ordered and unordered lists */
+    margin: 1em 0; /* Vertical margin for lists */
   }
   pre code.hljs {
-    padding: 0.5em;
+    padding: 0.5em; /* Padding for code inside pre tags */
   }
   h1,
   h2,
@@ -416,84 +433,84 @@ code .hljs-strong {
   h4,
   h5,
   h6 {
-    margin-top: var(--spacing-32);
+    margin-top: var(--spacing-32); /* Top margin for headings */
   }
   *:not(pre) > code,
   *:not(pre) > code.hljs {
-    font-size: 1rem;
-    padding: var(--spacing-4) var(--spacing-8);
+    font-size: 1rem; /* Font size for inline code */
+    padding: var(--spacing-4) var(--spacing-8); /* Padding for inline code */
   }
 }
 
 /* Medium devices (768px and up) */
 @media screen and (min-width: 768px) {
   .centered-block {
-    max-width: 720px;
+    max-width: 720px; /* Maximum width for centered blocks */
   }
   .centered-block *:not(pre, code, table, ol, ul, blockquote) {
-    max-width: 61ch;
+    max-width: 61ch; /* Maximum width for text content in centered blocks */
   }
   .card {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Font size for cards */
   }
   .main-block {
-    margin-top: 6vh;
+    margin-top: 6vh; /* Top margin for main block */
   }
   th,
   td {
-    padding: var(--spacing-4);
+    padding: var(--spacing-4); /* Padding for table cells */
   }
   blockquote {
-    padding: var(--spacing-32);
-    margin: 1rem 1.5rem;
+    padding: var(--spacing-32); /* Padding for blockquotes */
+    margin: 1rem 1.5rem; /* Margin for blockquotes */
   }
   ol,
   ul {
-    padding-left: 2.5rem;
-    margin: 1em 0;
+    padding-left: 2.5rem; /* Padding for ordered and unordered lists */
+    margin: 1em 0; /* Vertical margin for lists */
   }
   pre code.hljs {
-    padding: 1em;
+    padding: 1em; /* Padding for code inside pre tags */
   }
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Font size for h1 */
   }
   h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Font size for h2 */
   }
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.75rem; /* Font size for h3 */
   }
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Font size for h4 */
   }
   h5,
   h6 {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Font size for h5 and h6 */
   }
   *:not(pre) > code,
   *:not(pre) > code.hljs {
-    font-size: 1.063rem;
+    font-size: 1.063rem; /* Font size for inline code */
   }
 }
 
 /* Large devices (992px and up) */
 @media screen and (min-width: 992px) {
   .centered-block {
-    max-width: 960px;
+    max-width: 960px; /* Maximum width for centered blocks */
   }
   .centered-block *:not(pre, code, table, ol, ul, blockquote) {
-    max-width: var(--post-text-max-width);
+    max-width: var(--post-text-max-width); /* Maximum width for text content in centered blocks */
   }
   .card {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Font size for cards */
   }
   .main-block {
-    margin-top: 7vh;
+    margin-top: 7vh; /* Top margin for main block */
   }
   th,
   td {
-    padding: 0.5rem;
+    padding: 0.5rem; /* Padding for table cells */
   }
   h1,
   h2,
@@ -501,21 +518,21 @@ code .hljs-strong {
   h4,
   h5,
   h6 {
-    margin-top: var(--spacing-64);
+    margin-top: var(--spacing-64); /* Top margin for headings */
   }
   *:not(pre) > code,
   *:not(pre) > code.hljs {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* Font size for inline code */
   }
 }
 
 /* X-Large devices (1200px and up) */
 @media screen and (min-width: 1200px) {
   .main-block {
-    margin-top: 8vh;
+    margin-top: 8vh; /* Top margin for main block */
   }
   th,
   td {
-    padding: 0.6rem;
+    padding: 0.6rem; /* Padding for table cells */
   }
 }
