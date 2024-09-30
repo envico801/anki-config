@@ -7,27 +7,34 @@
 
 /* Color Variables */
 :root {
-  --color-black: #32302f;
-  --color-white: #fce8c3;
+  /* Color palette */
+  --color-primary-dark: #32302f;
+  --color-primary-light: #fce8c3;
   --color-border: #3c3836;
-  --color-blue: #68a8e4;
-  --color-red: #ef2f27;
-  --color-yellow: #fbb829;
-  --color-cyan: #0aaeb3;
-  --color-green: #98bc37;
-  --color-magenta: #ff5c8f;
-  --color-dark-grey: #918175;
-  --color-bright-blue: #7098f4;
-  --post-blockquote-bg: #08211e;
-  --post-blockquote-txt: #e0fffb;
-  --font-sans: 'Poppins', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --color-accent-blue: #68a8e4;
+  --color-accent-red: #ef2f27;
+  --color-accent-yellow: #fbb829;
+  --color-accent-cyan: #0aaeb3;
+  --color-accent-green: #98bc37;
+  --color-accent-magenta: #ff5c8f;
+  --color-neutral-grey: #918175;
+  --color-highlight-blue: #7098f4;
+
+  /* Blockquote styles */
+  --blockquote-bg: #08211e;
+  --blockquote-text: #e0fffb;
+
+  /* Typography */
+  --font-family-sans: 'Poppins', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
   --font-16: 1.6rem;
   --font-20: 2rem;
   --font-24: 2.4rem;
   --font-32: 3.2rem;
   --font-48: 4.8rem;
   --font-96: 9.6rem;
+
+  /* Spacing */
   --spacing-4: 0.4rem;
   --spacing-8: 0.8rem;
   --spacing-16: 1.6rem;
@@ -35,12 +42,18 @@
   --spacing-32: 3.2rem;
   --spacing-64: 6.4rem;
   --spacing-128: 12.8rem;
-  --post-txt-size: 1.125rem;
-  --post-txt-length: 90ch;
-  --post-txt-height: 2.5rem;
+
+  /* Post styles */
+  --post-text-size: 1.125rem;
+  --post-text-max-width: 90ch;
+  --post-line-height: 2.5rem;
+
+  /* Shadows */
   --shadow-sm: 0px 0px 4px 4px #0000000a;
   --shadow-md: 0px 0px 10px 4px #0000001a;
   --shadow-lg: 0px 0px 20px 8px #00000033;
+
+  /* Border radius */
   --rounded-4: 4px;
   --rounded-20: 20px;
 }
@@ -52,12 +65,12 @@
 
 /* Base Card Styling */
 .card {
-  font-family: var(--font-sans);
+  font-family: var(--font-family-sans);
   font-weight: 400;
   font-size: 1rem;
   text-align: left;
   margin-bottom: var(--spacing-32);
-  line-height: var(--post-txt-height);
+  line-height: var(--post-line-height);
 }
 
 .text-align-left {
@@ -78,18 +91,18 @@
 
 em {
   font-style: italic;
-  color: var(--color-dark-grey);
+  color: var(--color-neutral-grey);
 }
 
 a {
-  color: var(--color-blue);
+  color: var(--color-accent-blue);
   text-decoration: none;
   font-weight: 700;
 }
 
 a:hover {
   text-decoration: underline;
-  color: var(--color-bright-blue);
+  color: var(--color-highlight-blue);
 }
 
 p,
@@ -108,7 +121,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-family-sans);
   margin-top: var(--spacing-24);
   margin-bottom: var(--spacing-24);
   font-weight: 700;
@@ -137,7 +150,7 @@ h6 {
   font-size: 1rem;
 }
 h6 {
-  color: var(--color-dark-grey);
+  color: var(--color-neutral-grey);
 }
 
 /* Image Styling */
@@ -159,16 +172,16 @@ td {
 
 /* Blockquote Styling */
 blockquote {
-  font-family: var(--font-sans);
+  font-family: var(--font-family-sans);
   padding: 1.2rem;
   margin: var(--spacing-32) 0;
   text-align: start;
   box-shadow: var(--shadow-sm);
   border-radius: var(--rounded-20);
-  background-color: var(--post-blockquote-bg);
-  border: 1px solid var(--color-cyan);
-  border-top: 4px solid var(--color-cyan);
-  color: var(--post-blockquote-txt);
+  background-color: var(--blockquote-bg);
+  border: 1px solid var(--color-accent-cyan);
+  border-top: 4px solid var(--color-accent-cyan);
+  color: var(--blockquote-text);
 }
 
 /* Lists */
@@ -190,7 +203,7 @@ table {
 }
 
 code {
-  font-family: var(--font-mono);
+  font-family: var(--font-family-mono);
   font-weight: 400;
 }
 
@@ -199,8 +212,8 @@ code {
 *:not(pre) > code.hljs {
   display: inline;
   line-height: inherit;
-  color: var(--color-yellow);
-  background-color: var(--color-black);
+  color: var(--color-accent-yellow);
+  background-color: var(--color-primary-dark);
   font-size: 0.9rem;
   padding: 0.2rem var(--spacing-4);
   border: 1px solid var(--color-border);
@@ -211,7 +224,7 @@ pre code.hljs {
   display: block;
   overflow-x: auto;
   padding: var(--spacing-4);
-  color: var(--color-white);
+  color: var(--color-primary-light);
 }
 
 code.hljs {
@@ -220,8 +233,8 @@ code.hljs {
 
 .hljs,
 code.hljs {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: var(--color-primary-dark);
+  color: var(--color-primary-light);
   border: 4px solid var(--color-border);
 }
 
@@ -238,7 +251,7 @@ code .hljs-literal,
 code .hljs-punctuation,
 .hljs-tag,
 code .hljs-tag {
-  color: var(--color-white);
+  color: var(--color-primary-light);
 }
 
 /* Blue */
@@ -252,7 +265,7 @@ code .hljs-name,
 code .hljs-template-tag,
 .hljs-selector-tag,
 code .hljs-selector-tag {
-  color: var(--color-blue);
+  color: var(--color-accent-blue);
 }
 
 /* Red */
@@ -262,7 +275,7 @@ code .hljs-keyword,
 code .hljs-deletion,
 .hljs-operator,
 code .hljs-operator {
-  color: var(--color-red);
+  color: var(--color-accent-red);
 }
 
 /* Yellow */
@@ -286,7 +299,7 @@ code .hljs-title,
 code .hljs-title.function_,
 .hljs-title.function_.invoke__,
 code .hljs-title.function_.invoke__ {
-  color: var(--color-yellow);
+  color: var(--color-accent-yellow);
 }
 
 /* Cyan */
@@ -304,7 +317,7 @@ code .hljs-number,
 code .hljs-class,
 .hljs-variable.constant_,
 code .hljs-variable.constant_ {
-  color: var(--color-cyan);
+  color: var(--color-accent-cyan);
 }
 
 /* Green */
@@ -316,7 +329,7 @@ code .hljs-regexp,
 code .hljs-bullet,
 .hljs-addition,
 code .hljs-addition {
-  color: var(--color-green);
+  color: var(--color-accent-green);
 }
 
 /* Magenta */
@@ -332,7 +345,7 @@ code .hljs-doctag,
 code .hljs-attr,
 .hljs-formula,
 code .hljs-formula {
-  color: var(--color-magenta);
+  color: var(--color-accent-magenta);
 }
 
 /* Dark Grey */
@@ -348,7 +361,7 @@ code .hljs-meta.prompt_,
 code .hljs-meta .hljs-keyword,
 .hljs-meta .hljs-string,
 code .hljs-meta .hljs-string {
-  color: var(--color-dark-grey);
+  color: var(--color-neutral-grey);
 }
 
 /* Blockquote Border Color */
@@ -358,7 +371,7 @@ code .hljs-variable.language_,
 code .hljs-title.class_,
 .hljs-title.class_.inherited__,
 code .hljs-title.class_.inherited__ {
-  color: var(--color-bright-blue);
+  color: var(--color-highlight-blue);
 }
 
 /* Non-color styles */
@@ -380,7 +393,7 @@ code .hljs-strong {
     max-width: 540px;
   }
   .card {
-    font-size: var(--post-txt-size);
+    font-size: var(--post-text-size);
   }
   .main-block {
     margin-top: 5vh;
@@ -470,7 +483,7 @@ code .hljs-strong {
     max-width: 960px;
   }
   .centered-block *:not(pre, code, table, ol, ul, blockquote) {
-    max-width: var(--post-txt-length);
+    max-width: var(--post-text-max-width);
   }
   .card {
     font-size: 1.4rem;
