@@ -35,9 +35,9 @@
   --spacing-32: 3.2rem;
   --spacing-64: 6.4rem;
   --spacing-128: 12.8rem;
-  --post-txt-size: 18px;
+  --post-txt-size: 1.125rem;
   --post-txt-length: 90ch;
-  --post-txt-height: 40px;
+  --post-txt-height: 2.5rem;
   --shadow-sm: 0px 0px 4px 4px #0000000a;
   --shadow-md: 0px 0px 10px 4px #0000001a;
   --shadow-lg: 0px 0px 20px 8px #00000033;
@@ -54,7 +54,7 @@
 .card {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: var(--post-txt-size);
+  font-size: 1rem;
   text-align: left;
   margin-bottom: var(--spacing-32);
   line-height: var(--post-txt-height);
@@ -109,7 +109,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-sans);
-  margin-top: var(--spacing-64);
+  margin-top: var(--spacing-24);
   margin-bottom: var(--spacing-24);
   font-weight: 700;
 }
@@ -117,27 +117,27 @@ h6 {
 h1,
 h2 {
   text-transform: capitalize;
-  font-size: clamp(var(--font-24), 4vw, var(--font-32));
 }
 
 h1 {
-  font-size: 2.5rem;
-}
-h2 {
   font-size: 2rem;
 }
+h2 {
+  font-size: 1.6rem;
+}
 h3 {
-  font-size: 1.75rem;
-  line-height: 32px;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-h5 {
-  font-size: 1.25rem;
-}
+h5,
 h6 {
   font-size: 1rem;
+}
+h6 {
+  color: var(--color-dark-grey);
 }
 
 /* Image Styling */
@@ -160,7 +160,7 @@ td {
 /* Blockquote Styling */
 blockquote {
   font-family: var(--font-sans);
-  padding: var(--spacing-32);
+  padding: 1.2rem;
   margin: var(--spacing-32) 0;
   text-align: start;
   box-shadow: var(--shadow-sm);
@@ -201,8 +201,8 @@ code {
   line-height: inherit;
   color: var(--color-yellow);
   background-color: var(--color-black);
-  font-size: var(--post-txt-size);
-  padding: var(--spacing-4) var(--spacing-8);
+  font-size: 0.9rem;
+  padding: 0.2rem var(--spacing-4);
   border: 1px solid var(--color-border);
 }
 
@@ -380,12 +380,13 @@ code .hljs-strong {
     max-width: 540px;
   }
   .card {
-    font-size: 1.1rem;
+    font-size: var(--post-txt-size);
   }
   .main-block {
     margin-top: 5vh;
   }
   blockquote {
+    padding: var(--spacing-24);
     margin: 1rem;
   }
   ol,
@@ -395,6 +396,19 @@ code .hljs-strong {
   }
   pre code.hljs {
     padding: 0.5em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: var(--spacing-32);
+  }
+  *:not(pre) > code,
+  *:not(pre) > code.hljs {
+    font-size: 1rem;
+    padding: var(--spacing-4) var(--spacing-8);
   }
 }
 
@@ -417,6 +431,7 @@ code .hljs-strong {
     padding: var(--spacing-4);
   }
   blockquote {
+    padding: var(--spacing-32);
     margin: 1rem 1.5rem;
   }
   ol,
@@ -427,6 +442,26 @@ code .hljs-strong {
   pre code.hljs {
     padding: 1em;
   }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5,
+  h6 {
+    font-size: 1.3rem;
+  }
+  *:not(pre) > code,
+  *:not(pre) > code.hljs {
+    font-size: 1.063rem;
+  }
 }
 
 /* Large devices (992px and up) */
@@ -435,7 +470,7 @@ code .hljs-strong {
     max-width: 960px;
   }
   .centered-block *:not(pre, code, table, ol, ul, blockquote) {
-    max-width: 75ch;
+    max-width: var(--post-txt-length);
   }
   .card {
     font-size: 1.4rem;
@@ -446,6 +481,18 @@ code .hljs-strong {
   th,
   td {
     padding: 0.5rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: var(--spacing-64);
+  }
+  *:not(pre) > code,
+  *:not(pre) > code.hljs {
+    font-size: 1.125rem;
   }
 }
 
