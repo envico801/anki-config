@@ -1,3 +1,7 @@
+/* If you have any questions about the styles create a problem and I will be glad to help you.
+ * The repository will always be the most updated version of the cards and styles.
+ * https://github.com/envico801/anki-config */
+
 /* Importing external fonts: Poppins for sans-serif and JetBrains Mono for monospace */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 
@@ -32,12 +36,6 @@
   /* Grey text */
   --color-highlight-blue: #7098f4;
   /* Link hover color */
-
-  /* Blockquote styles */
-  --blockquote-bg: #08211e;
-  /* Blockquote background */
-  --blockquote-text: #e0fffb;
-  /* Blockquote text color */
 
   /* Typography settings */
   --font-family-sans: 'Poppins', sans-serif;
@@ -242,15 +240,13 @@ blockquote {
   /* Aligns blockquote text to the start */
   box-shadow: var(--shadow-sm);
   /* Adds a subtle shadow */
-  border-radius: var(--rounded-20);
+  border-radius: var(--rounded-4);
   /* Rounds blockquote corners */
-  background-color: var(--blockquote-bg);
+  background-color: var(--color-primary-dark);
   /* Background color */
-  border: 1px solid var(--color-accent-cyan);
-  /* Border color */
-  border-top: 4px solid var(--color-accent-cyan);
-  /* Top border accent */
-  color: var(--blockquote-text);
+  border-left: 8px solid var(--color-accent-blue);
+  /* Left border accent */
+  color: white;
   /* Text color inside blockquotes */
 }
 
@@ -495,7 +491,9 @@ code .hljs-strong {
   }
 
   blockquote {
-    padding: var(--spacing-24);
+    /* padding: var(--spacing-24); */
+    padding-left: var(--spacing-24);
+    padding-right: var(--spacing-24);
     /* Padding for blockquotes */
     margin: 1rem;
     /* Margin for blockquotes */
@@ -565,7 +563,7 @@ code .hljs-strong {
   }
 
   blockquote {
-    padding: var(--spacing-32);
+    /* padding: var(--spacing-32); */
     /* Padding for blockquotes */
     margin: 1rem 1.5rem;
     /* Margin for blockquotes */
