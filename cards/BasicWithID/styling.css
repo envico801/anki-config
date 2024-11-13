@@ -136,6 +136,13 @@ a {
   /* Bold links */
 }
 
+/* Code tags inside links */
+a>code,
+a>code.hljs {
+  color: inherit !important;
+  /* This will make the code inherit the link's color */
+}
+
 a:hover {
   text-decoration: underline;
   /* Underlines link on hover */
@@ -292,6 +299,8 @@ code {
 *:not(pre)>code.hljs {
   display: inline;
   line-height: inherit;
+  white-space: nowrap;
+  /* Prevents line-break */
   color: var(--color-accent-yellow);
   /* Yellow text for inline code */
   border: 1px solid var(--color-border);
