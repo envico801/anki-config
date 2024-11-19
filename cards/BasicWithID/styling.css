@@ -3,7 +3,7 @@
  * https://github.com/envico801/anki-config */
 
 /* Importing external fonts: Poppins for sans-serif and JetBrains Mono for monospace */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Defining a custom font for JetBrains Mono */
 @font-face {
@@ -121,10 +121,8 @@
 }
 
 /* Emphasis styles */
-em {
+em, i {
   font-style: italic;
-  color: var(--color-neutral-grey);
-  /* Grey text for emphasis */
 }
 
 /* Link styles */
